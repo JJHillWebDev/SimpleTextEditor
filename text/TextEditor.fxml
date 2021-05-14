@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TextEditorController">
+   <children>
+      <MenuBar layoutX="-10.0" layoutY="2.0">
+        <menus>
+          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="newMenuItem" mnemonicParsing="false" onAction="#newMenuItemListener" text="New" />
+                  <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#openMenuItemListener" text="Open" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" onAction="#saveMenuItemListener" text="Save" />
+                  <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#saveAsMenuItemListener" text="Save As" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#exitMenuItemListener" text="Exit" />
+            </items>
+          </Menu>
+          <Menu fx:id="fontMenu" mnemonicParsing="false" text="Font">
+               <items>
+                  <RadioMenuItem fx:id="monoMenuItem" mnemonicParsing="false" onAction="#monoMenuItemListener" text="Monospaced">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="radioFontChoices" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem fx:id="serifMenuItem" mnemonicParsing="false" onAction="#serifMenuItemListener" text="Serif" toggleGroup="$radioFontChoices" />
+                  <RadioMenuItem fx:id="sansMenuItem" mnemonicParsing="false" onAction="#sansMenuItemListener" selected="true" text="SansSerif" toggleGroup="$radioFontChoices" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <CheckMenuItem fx:id="italicMenuItem" mnemonicParsing="false" onAction="#italicMenuItemListener" text="Italic" />
+                  <CheckMenuItem fx:id="boldMenuItem" mnemonicParsing="false" onAction="#boldMenuItemListener" text="Bold" />
+               </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="textArea" layoutY="27.0" prefColumnCount="39" prefHeight="375.0" prefRowCount="20" prefWidth="600.0" wrapText="true">
+         <font>
+            <Font name="SansSerif Regular" size="12.0" />
+         </font></TextArea>
+   </children>
+</AnchorPane>
